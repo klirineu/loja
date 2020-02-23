@@ -1,14 +1,19 @@
-const express = require('express')
+const express = require("express");
 
-const CategoriaController = require('./controllers/CategoriaController')
-const ProdutoController = require('./controllers/ProdutoController')
+const UserController = require("./controllers/UserController");
+const AuthController = require("./controllers/AuthController");
+const CategoriaController = require("./controllers/CategoriaController");
+const ProdutoController = require("./controllers/ProdutoController");
 
-const Routes = express.Router()
+const Routes = express.Router();
 
-Routes.get('/categorias', CategoriaController.index)
-Routes.post('/categorias', CategoriaController.store)
+Routes.post("/users", UserController.store);
+Routes.post("/users/authenticate", AuthController.authenticate);
 
-Routes.get('/produtos', ProdutoController.index)
-Routes.post('/produtos', ProdutoController.store)
+Routes.get("/categorias", CategoriaController.index);
+Routes.post("/categorias", CategoriaController.store);
 
-module.exports = Routes
+Routes.get("/produtos", ProdutoController.index);
+Routes.post("/produtos", ProdutoController.store);
+
+module.exports = Routes;
