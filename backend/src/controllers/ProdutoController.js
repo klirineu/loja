@@ -11,8 +11,10 @@ module.exports = {
   async store(req, res) {
     try {
       const {
+        filename
+      } = req.file
+      const {
         title,
-        img,
         price,
         company,
         info,
@@ -29,7 +31,7 @@ module.exports = {
 
       const produto = await Produto.create({
         title,
-        img,
+        img: filename,
         price,
         company,
         info,
@@ -37,6 +39,7 @@ module.exports = {
         total,
         cat_id
       })
+
 
       return res.json(produto)
     } catch (err) {

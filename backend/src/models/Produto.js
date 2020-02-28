@@ -68,6 +68,12 @@ class Produto extends Model {
             msg: "Esse campo não pode ser vazio"
           }
         }
+      },
+      img_url: {
+        type: DataTypes.VIRTUAL,
+        get() {
+          return `http://localhost:3333/files/${this.getDataValue("img")}`
+        }
       }
     }, {
       sequelize,
@@ -80,6 +86,7 @@ class Produto extends Model {
       foreignKey: "cat_id",
       as: "categorias"
     })
+
   }
 
 }
