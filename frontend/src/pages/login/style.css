@@ -1,0 +1,80 @@
+.main-login {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.main-login button:hover {
+  cursor: pointer;
+}
+
+.main-login .login {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 350px;
+  height: 200px;
+  justify-items: center;
+  align-self: flex-end;
+  background-color: white;
+  margin-top: 20px;
+}
+
+.main-login .login h2 {
+  margin-top: 24px;
+  margin-left: 42px;
+  justify-self: left;
+  color: #784fe7;
+}
+
+.main-login .login .input {
+  width: 264px;
+  margin-bottom: 10px;
+}
+
+.main-login .login .input input {
+  margin-bottom: 6px;
+  padding: 7px;
+  width: 100%;
+  border: 1px solid #784fe7;
+  text-align: left;
+}
+
+.main-login .cadastro {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  width: 264px;
+  height: 100px;
+}
+
+.main-login .cadastro strong {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.main-login .cadastro button {
+  margin-bottom: 5px;
+  border-style: none;
+  width: 264px;
+  height: 32px;
+  background-color: white;
+  font-size: 18px;
+  color: #784fe7;
+  border: 1px solid white;
+}
+
+.main-login .login button {
+  margin-bottom: 5px;
+  border-style: none;
+  width: 264px;
+  height: 32px;
+  background-color: #784fe7;
+  font-size: 18px;
+  color: white;
+  border: 1px solid #784fe7;
+}

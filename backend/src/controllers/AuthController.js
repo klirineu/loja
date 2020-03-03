@@ -6,20 +6,18 @@ const User = require("../models/User");
 module.exports = {
   async authenticate(req, res) {
     try {
-      const {
-        name,
-        password
-      } = req.body;
+      const { email, password } = req.body;
 
       const user = await User.findOne({
         where: {
-          name
+          email
         }
       });
 
-      if (!user) return res.status(400).json({
-        error: "Usuário não existe"
-      });
+      if (!user)
+        return res.status(400).json({
+          error: "Usuário não existe"
+        });
 
       if (!(await bcrypt.compare(password, user.password)))
         return res.status(400).json({
@@ -28,11 +26,15 @@ module.exports = {
 
       user.password = undefined;
 
-      const token = jwt.sign({
-        id: user.id
-      }, "#@Klirineu_100%+acao", {
-        expiresIn: 86400
-      });
+      const token = jwt.sign(
+        {
+          id: user.id
+        },
+        "#@Klirineu_100%+acao",
+        {
+          expiresIn: 86400
+        }
+      );
 
       return res.json({
         user,

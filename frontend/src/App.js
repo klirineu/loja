@@ -1,10 +1,18 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import "./App.css";
+
+import Routes from "./routes";
+import Header from "./components/header/header";
 
 function App() {
   return (
     <div className="App">
-      <header><h1>LOJA</h1></header>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
     </div>
   );
 }

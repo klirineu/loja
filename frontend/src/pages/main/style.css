@@ -1,0 +1,49 @@
+.main ul {
+  display: grid;
+  grid-template-columns: 25vw 25vw 25vw;
+  grid-gap: 60px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  justify-self: center;
+  margin: 50px;
+  min-width: 800px;
+}
+
+.main ul li {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.main ul li:hover {
+  cursor: pointer;
+}
+
+.main ul li p {
+  justify-self: right;
+  align-self: center;
+  padding: 10px;
+  color: #784fe7;
+}
+
+.main ul li button {
+  justify-self: right;
+  padding: 0px 5px;
+  color: white;
+  font-size: 20px;
+  border-style: none;
+  background-color: #784fe7;
+  border-radius: 5px;
+  grid-column-start: 2;
+}
+
+.main ul li button:hover {
+  cursor: pointer;
+}
+
+.main ul li img {
+  width: 12vw;
+}

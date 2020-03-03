@@ -1,0 +1,51 @@
+.main-header {
+  display: grid;
+  grid-template-areas: "logo pesquisa login";
+  padding: 5px;
+  background-color: white;
+  border-bottom: 3px solid white;
+  color: #784fe7;
+  padding-bottom: 20px;
+}
+
+.main-header #logo {
+  grid-area: logo;
+  font-size: 26px;
+  justify-self: center;
+  padding-top: 6px;
+}
+
+.main-header input {
+  grid-area: pesquisa;
+  padding: 10px 20px;
+}
+
+#input-pesquisa,
+#link-tela-login,
+#carrinho {
+  display: none;
+}
+
+.main-header .link {
+  grid-area: login;
+  justify-self: left;
+  padding-top: 10px;
+  padding-left: 16px;
+}
+
+.link {
+  text-decoration: none;
+  color: #784fe7;
+}
+
+.main-header img {
+  grid-area: login;
+  justify-self: right;
+  padding-right: 16px;
+  padding-top: 6px;
+  height: 35px;
+}
+
+.main-header img:hover {
+  cursor: pointer;
+}
