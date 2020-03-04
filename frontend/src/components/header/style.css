@@ -15,6 +15,10 @@
   padding-top: 6px;
 }
 
+.main-header #detalhes-conta {
+  display: none;
+}
+
 .main-header input {
   grid-area: pesquisa;
   padding: 10px 20px;
@@ -22,18 +26,44 @@
 
 #input-pesquisa,
 #link-tela-login,
-#carrinho {
+#carrinho,
+#modal-conta {
   display: none;
 }
 
-.main-header .link {
+#modal-conta {
+  margin-top: 5px;
+  display: grid;
+  justify-items: right;
+  padding: 5px;
+  background-color: #784fe7;
+  border-radius: 5px;
+}
+#modal-conta strong {
+  margin-left: 50px;
+  color: white;
+}
+
+#modal-conta strong:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.main-header .link,
+.main-header .conta {
   grid-area: login;
   justify-self: left;
   padding-top: 10px;
   padding-left: 16px;
 }
 
-.link {
+.main-header .conta .name-user {
+  text-decoration: none;
+  color: #784fe7;
+}
+
+.link,
+.conta {
   text-decoration: none;
   color: #784fe7;
 }

@@ -10,11 +10,13 @@ export default function Login(props) {
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
-    e.preventDefault();
     api
       .post("/users/authenticate", { email, password })
       .then(res => {
         props.history.push("/");
+        //props.history.go(0);
+        localStorage.setItem("token", res.data.token);
+        window.location.reload();
         console.log(res.data.token);
       })
       .catch(error => {

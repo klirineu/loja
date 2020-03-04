@@ -2,19 +2,28 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 
 module.exports = {
+  async index(req, res) {
+    try {
+      const user = await User.findByPk(req.userId);
+
+      user.password = undefined;
+
+      return res.json(user);
+    } catch (error) {
+      res.status(400).json({ error });
+    }
+  },
   async store(req, res) {
     try {
-      const {
-        name,
-        email,
-        password
-      } = req.body;
+      const { name, email, password } = req.body;
 
-      if (await User.findOne({
+      if (
+        await User.findOne({
           where: {
             name
           }
-        }))
+        })
+      )
         return res.status(400).json({
           error: "Usuário já existe"
         });
@@ -27,11 +36,15 @@ module.exports = {
 
       user.password = undefined;
 
-      const token = jwt.sign({
-        id: user.id
-      }, "#@Klirineu_100%+acao", {
-        expiresIn: 86400
-      });
+      const token = jwt.sign(
+        {
+          id: user.id
+        },
+        "#@Klirineu_100%+acao",
+        {
+          expiresIn: 86400
+        }
+      );
 
       return res.json({
         user,
@@ -47,10 +60,7 @@ module.exports = {
   async update(req, res) {
     try {
       const user_id = req.userId;
-      const {
-        name,
-        password
-      } = req.body;
+      const { name, password } = req.body;
 
       const user = await User.findByPk(user_id);
 
@@ -60,14 +70,17 @@ module.exports = {
         });
       }
 
-      await user.update({
-        name,
-        password
-      }, {
-        where: {
-          id: user_id
+      await user.update(
+        {
+          name,
+          password
+        },
+        {
+          where: {
+            id: user_id
+          }
         }
-      });
+      );
 
       return res.json(user);
     } catch (err) {

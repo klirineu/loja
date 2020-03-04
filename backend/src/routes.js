@@ -7,6 +7,8 @@ const AuthController = require("./controllers/AuthController");
 const CategoriaController = require("./controllers/CategoriaController");
 const ProdutoController = require("./controllers/ProdutoController");
 
+const authMiddleware = require("./middlewares/authenticate");
+
 const Routes = express.Router();
 const upload = multer(uploadConfig);
 
@@ -19,5 +21,8 @@ Routes.post("/categorias", CategoriaController.store);
 
 Routes.get("/produtos", ProdutoController.index);
 Routes.post("/produtos", upload.single("img"), ProdutoController.store);
+
+Routes.use(authMiddleware);
+Routes.get("/users", UserController.index);
 
 module.exports = Routes;

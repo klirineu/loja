@@ -25,7 +25,7 @@ export default function Register(props) {
       .post("/users", { name, email, password })
       .then(res => {
         props.history.push("/");
-        console.log(res.data.token);
+        localStorage.setItem("token", res.data.token);
       })
       .catch(error => {
         console.log(error);

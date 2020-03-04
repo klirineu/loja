@@ -22,10 +22,11 @@ module.exports = (req, res, next) => {
       error: "erro no formato do token"
     });
 
-  jwt.verify(token, process.env.SECRET, (err, decoded) => {
-    if (err) return res.status(401).json({
-      error: "token inválido"
-    });
+  jwt.verify(token, "#@Klirineu_100%+acao", (err, decoded) => {
+    if (err)
+      return res.status(401).json({
+        error: "token inválido"
+      });
 
     req.userId = decoded.id;
 

@@ -8,13 +8,14 @@ export default function Main() {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
+    var input = document.getElementById("input-pesquisa");
+    var link = document.getElementById("link-tela-login");
+    var carrinho = document.getElementById("carrinho");
+
+    carrinho.style.display = "block";
+    input.style.display = "block";
+    link.style.display = "block";
     function handleProdutos() {
-      var input = document.getElementById("input-pesquisa");
-      var link = document.getElementById("link-tela-login");
-      var carrinho = document.getElementById("carrinho");
-      carrinho.style.display = "block";
-      input.style.display = "block";
-      link.style.display = "block";
       api
         .get("/categoria/Celulares")
         .then(res => {
@@ -27,7 +28,7 @@ export default function Main() {
 
     handleProdutos();
   }, []);
-  console.log(produtos);
+
   return (
     <div className="main">
       <ul>
