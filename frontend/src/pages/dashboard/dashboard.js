@@ -5,7 +5,9 @@ import "./style.css";
 export default function Dashboard() {
   return (
     <div className="main-dashboard">
-      <h1>dashboard</h1>
+      <div className="card-dashboard">Acesso e segurança</div>
+      <div className="card-dashboard">Endereços</div>
+      <div className="card-dashboard">Opções de pagamento</div>
     </div>
   );
 }

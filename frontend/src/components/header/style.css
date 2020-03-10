@@ -22,6 +22,8 @@
 .main-header input {
   grid-area: pesquisa;
   padding: 10px 20px;
+  height: 35px;
+  margin-top: 5px;
 }
 
 #input-pesquisa,
@@ -32,19 +34,32 @@
 }
 
 #modal-conta {
+  z-index: 1;
+  position: fixed;
   margin-top: 5px;
+  margin-left: 2px;
   display: grid;
+  grid-template-rows: 1fr 1fr;
   justify-items: right;
-  padding: 5px;
+  padding: 10px;
   background-color: #784fe7;
   border-radius: 5px;
+  border: 1px solid white;
 }
+
+#modal-conta .conta-user {
+  margin-left: 16px;
+  color: white;
+  text-decoration: none;
+}
+
 #modal-conta strong {
-  margin-left: 50px;
+  margin-left: 64px;
   color: white;
 }
 
-#modal-conta strong:hover {
+#modal-conta strong:hover,
+#modal-conta .conta-user:hover {
   cursor: pointer;
   text-decoration: underline;
 }

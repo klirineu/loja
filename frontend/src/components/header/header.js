@@ -74,7 +74,14 @@ export default function Header(props) {
             {user}
           </Link>
           <div id="modal-conta">
-            <strong onClick={logOff}>sair</strong>
+            <div>
+              <Link to="/dashboard" className="conta-user">
+                Sua conta
+              </Link>
+            </div>
+            <div>
+              <strong onClick={logOff}>sair</strong>
+            </div>
           </div>
         </strong>
       ) : (
