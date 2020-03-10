@@ -24,5 +24,6 @@ Routes.post("/produtos", upload.single("img"), ProdutoController.store);
 
 Routes.use(authMiddleware);
 Routes.get("/users", UserController.index);
+Routes.put("/users", UserController.update);
 
 module.exports = Routes;

@@ -26,6 +26,7 @@ export default function Register(props) {
       .then(res => {
         props.history.push("/");
         localStorage.setItem("token", res.data.token);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error);

@@ -14,6 +14,7 @@
   width: 320px;
   height: 364px;
   background-color: white;
+  border-radius: 8px;
 }
 
 .main-register .register h2 {

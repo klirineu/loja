@@ -1,0 +1,59 @@
+.main-a_s {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-a_s .a_s {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-color: white;
+  color: #784fe7;
+  width: 350px;
+  border-radius: 8px;
+}
+
+.main-a_s .button-cld {
+  align-self: flex-start;
+  margin-top: -40px;
+  justify-self: center;
+}
+
+.main-a_s .button-cld button {
+  border-style: none;
+  border-radius: 5px;
+  color: #784fe7;
+  background-color: white;
+  width: 264px;
+  height: 32px;
+}
+
+.main-a_s .a_s ul li {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 16px;
+}
+
+.main-a_s .a_s ul li button {
+  justify-self: right;
+  background-color: #784fe7;
+  color: white;
+  border-style: none;
+  border-radius: 5px;
+  height: 24px;
+  width: 50px;
+}
+
+.main-a_s .a_s ul li button:hover,
+.main-a_s .button-cld button:hover {
+  cursor: pointer;
+}
+
+.main-a_s .a_s ul li .button-add {
+  width: 64px;
+  margin-right: -8px;
+}

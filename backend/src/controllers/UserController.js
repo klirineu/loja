@@ -60,7 +60,7 @@ module.exports = {
   async update(req, res) {
     try {
       const user_id = req.userId;
-      const { name, password } = req.body;
+      const { name, email, password, number, cpf } = req.body;
 
       const user = await User.findByPk(user_id);
 
@@ -73,7 +73,10 @@ module.exports = {
       await user.update(
         {
           name,
-          password
+          email,
+          password,
+          number,
+          cpf
         },
         {
           where: {

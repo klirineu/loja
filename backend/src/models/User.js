@@ -31,17 +31,7 @@ class User extends Model {
           }
         },
         cpf: {
-          type: DataTypes.INTEGER,
-          validate: {
-            len: {
-              args: [11],
-              msg: "cpf deve ter 11 caracteres"
-            },
-            max: {
-              args: [11],
-              msg: "não pode ter mais que 11 caracteres"
-            }
-          }
+          type: DataTypes.INTEGER
         },
         number: {
           type: DataTypes.INTEGER

@@ -7,6 +7,7 @@ import Main from "./pages/main/main";
 import Login from "./pages/login/login";
 import Register from "./pages/register/register";
 import Dashboard from "./pages/dashboard/dashboard";
+import A_s from "./pages/a_s/a_s";
 
 export default function Routes() {
   return (
@@ -15,6 +16,7 @@ export default function Routes() {
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
       <PrivateRoute path="/dashboard" component={Dashboard} />
+      <PrivateRoute path="/a_s" component={A_s} />
     </Switch>
   );
 }
