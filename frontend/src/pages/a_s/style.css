@@ -53,7 +53,91 @@
   cursor: pointer;
 }
 
-.main-a_s .a_s ul li .button-add {
+.main-a_s .a_s ul li div .button-add {
   width: 64px;
-  margin-right: -8px;
+  margin-left: 100px;
+  margin-right: -20px;
+}
+
+.modal {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  position: relative;
+  padding: 60px;
+  margin: 120px auto;
+  border-radius: 8px;
+  width: 350px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 0.5fr;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  background: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  display: grid;
+}
+
+.modal-content strong {
+  width: 200px;
+  position: absolute;
+  top: 10px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.modal-content input {
+  height: 32px;
+  width: 200px;
+  margin: 5px;
+  border: 1px solid #784fe7;
+  padding: 7px;
+}
+
+.modal-content button {
+  width: 80%;
+  height: 32px;
+  border: 1px solid #784fe7;
+  background-color: #784fe7;
+  color: white;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }

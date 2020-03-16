@@ -8,7 +8,9 @@ export default function Dashboard() {
     var input = document.getElementById("input-pesquisa");
     var link = document.getElementById("link-tela-login");
     var carrinho = document.getElementById("carrinho");
+    var modalConta = document.getElementById("modal-conta");
 
+    modalConta.style.display = "none";
     carrinho.style.display = "block";
     input.style.display = "block";
     link.style.display = "block";
