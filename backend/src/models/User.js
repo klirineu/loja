@@ -52,21 +52,20 @@ class User extends Model {
       },
       {
         sequelize,
-        tableName: "users",
-
-        hooks: {
-          beforeCreate: user => {
-            const salt = bcrypt.genSaltSync();
-            user.password = bcrypt.hashSync(user.password, salt);
-          }
-        },
-        instanceMethods: {
-          validatePassword: function(password) {
-            return bcrypt.compareSync(password, this.password);
-          }
-        }
+        tableName: "users"
       }
     );
+
+    this.addHook("beforeSave", async user => {
+      if (user.password) {
+        const salt = bcrypt.genSaltSync();
+        user.password = bcrypt.hashSync(user.password, salt);
+      }
+    });
+    return this;
+  }
+  async checkPassword(password) {
+    return bcrypt.compareSync(password, this.password);
   }
 }
 

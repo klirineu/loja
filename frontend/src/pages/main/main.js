@@ -29,6 +29,17 @@ export default function Main() {
     handleProdutos();
   }, []);
 
+  function openModal(id) {
+    var modal = document.getElementById(id);
+    modal.style.display = "block";
+  }
+
+  function closeModal(id, e) {
+    e.preventDefault();
+    var modal = document.getElementById(id);
+    modal.style.display = "none";
+  }
+
   return (
     <div className="main">
       <ul>
@@ -40,7 +51,32 @@ export default function Main() {
               <br />
               <strong>preço: {celulares.price}</strong>
             </p>
-            <button title="mais informações">+</button>
+            <button
+              title="mais informações"
+              onClick={() => openModal(celulares.id)}
+            >
+              +
+            </button>
+            <div id={celulares.id} className="modal">
+              <div className="modal-content">
+                <button
+                  className="close-button"
+                  onClick={e => closeModal(celulares.id, e)}
+                >
+                  x
+                </button>
+
+                <img src={celulares.img_url} alt="" />
+
+                <strong className="title">{celulares.title}</strong>
+
+                <strong className="details">{celulares.info}</strong>
+                <div className="buttons">
+                  <button>adicionar no carrinho</button>
+                  <button>comprar agora</button>
+                </div>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

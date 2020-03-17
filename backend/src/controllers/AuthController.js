@@ -19,10 +19,9 @@ module.exports = {
           error: "Usuário não existe"
         });
 
-      if (!(await bcrypt.compare(password, user.password)))
-        return res.status(400).json({
-          error: "senha inválida"
-        });
+      if (!(await user.checkPassword(password))) {
+        return res.status(400).json({ error: "senha inválida" });
+      }
 
       user.password = undefined;
 

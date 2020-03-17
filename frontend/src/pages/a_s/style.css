@@ -59,7 +59,7 @@
   margin-right: -20px;
 }
 
-.modal {
+.main-a_s .a_s ul li div .modal {
   display: none;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -73,7 +73,7 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal-content {
+.main-a_s .a_s ul li div .modal-content {
   position: relative;
   padding: 60px;
   margin: 120px auto;
